@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../vuejs/vuejs-2.5.16.js"></script>
+    <script type="text/javascript" src="../vuejs/axios-0.18.0.js"></script>
+</head>
+<body>
+    <div id="menudiv">
+        <div id="menulistdiv">
+            <table border="1" rules="all" align="center">
+                <tr bgcolor="#ffb6c1">
+                    <th>编号</th>
+                    <th>父id</th>
+                    <th>节点名称</th>
+                    <th>url</th>
+                    <th>target</th>
+                    <th>icon(样式)</th>
+                    <th colspan="100">
+                        操作
+                        <button @click="toAddMenu()">新增</button>
+                    </th>
+                </tr>
+                <tr v-for="m in menulist" align="center">
+                    <td>{{m.id}}</td>
+                    <td>{{m.pid}}</td>
+                    <td>{{m.mname}}</td>
+                    <td>{{m.url}}</td>
+                    <td>{{m.target}}</td>
+                    <td>{{m.icon}}</td>
+                    <td><button @click="getMenuListByPid(m.id)">查询下一级</button></td>
+                    <td><button @click="deleteMenuById(m.id)">删除</button></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!-- 添加菜单 -->
+        <div id="menuupdatediv" style="display: none">
+            <table border="1" rules="all" align="center">
+                <tr>
+                    <td>父id</td>
+                    <td>
+                        {{pid}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>节点名称</td>
+                    <td>
+                        <input type="text" v-model="entity.mname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>url</td>
+                    <td>
+                        <input type="text" v-model="entity.url">
+                    </td>
+                </tr>
+                <tr>
+                    <td>target</td>
+                    <td>
+                        <input type="text" v-model="entity.target">
+                    </td>
+                </tr>
+                <tr>
+                    <td>icon(样式)</td>
+                    <td>
+                        <input type="text" v-model="entity.icon">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="100">
+                        <input type="button" value="提交添加" @click="saveMenu()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../myjs/menu_list.js"></script>
+</html>

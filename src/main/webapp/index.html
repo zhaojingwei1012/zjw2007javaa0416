@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <script type="text/javascript" src="vuejs/vuejs-2.5.16.js"></script>
+    <script type="text/javascript" src="vuejs/axios-0.18.0.js"></script>
+</head>
+<body>
+    <div id="logindiv">
+        <!-- required--必须填写信息 -->
+            用户名：<input type="text" v-model="userBean.uname" required="required"><br>
+            密码：<input type="password" v-model="userBean.pwd" required="required"><br>
+            <input type="submit" value="登录" @click="getLogin()">
+    </div>
+    <script type="text/javascript" src="myjs/index.js"></script>
+</body>
+</html>
