@@ -41,6 +41,8 @@ public class UserController {
         return userService.getMeunList();
     }
 
+    //这个就是我们要把urls放进set里面，然后再放进session里面
+
     @RequestMapping("getUserList")
     public List<UserBean> getUserList(){
         return userService.getUserList();
