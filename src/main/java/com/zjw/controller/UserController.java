@@ -38,6 +38,10 @@ public class UserController {
 
     @RequestMapping("getMeunList")
     public List<MenuBean> getMeunList(){
+
+
+
+
         return userService.getMeunList();
     }
 
